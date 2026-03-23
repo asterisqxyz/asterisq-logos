@@ -1,0 +1,1177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AsterisQ — Logo Review</title>
+<meta name="description" content="AsterisQ brand identity — team logo review and voting">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80'>✦</text></svg>">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+
+:root {
+  --gold: #c9a84c;
+  --gold-light: #e8d48b;
+  --gold-dark: #8b6914;
+  --navy: #0f1638;
+  --navy-light: #1a2255;
+  --emerald: #2ecc71;
+  --emerald-dark: #1a7a42;
+  --bg: #06060c;
+  --surface: rgba(255,255,255,0.03);
+  --surface-hover: rgba(255,255,255,0.06);
+  --border: rgba(255,255,255,0.07);
+  --border-gold: rgba(201,168,76,0.3);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--bg);
+  color: #e0e0e0;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background:
+    radial-gradient(ellipse 800px 600px at 20% 20%, rgba(201,168,76,0.03) 0%, transparent 60%),
+    radial-gradient(ellipse 600px 800px at 80% 80%, rgba(46,204,113,0.02) 0%, transparent 60%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── Hero ── */
+.hero {
+  position: relative;
+  padding: 70px 20px 50px;
+  text-align: center;
+  z-index: 1;
+}
+
+.hero-badge {
+  display: inline-block;
+  padding: 6px 18px;
+  border: 1px solid var(--border-gold);
+  border-radius: 20px;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 28px;
+  background: rgba(201,168,76,0.05);
+}
+
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(32px, 5vw, 52px);
+  font-weight: 400;
+  color: #fff;
+  margin-bottom: 14px;
+  letter-spacing: -0.5px;
+}
+
+.hero h1 span { color: var(--gold); }
+
+.hero p {
+  font-size: 14px;
+  color: #555;
+  max-width: 520px;
+  margin: 0 auto 32px;
+  line-height: 1.7;
+}
+
+/* ── Stats Bar ── */
+.stats-bar {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  padding: 20px 0 10px;
+  position: relative;
+  z-index: 1;
+}
+
+.stat { text-align: center; }
+
+.stat-num {
+  font-size: 28px;
+  font-weight: 200;
+  color: var(--gold);
+  font-family: 'Playfair Display', serif;
+}
+
+.stat-label {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #555;
+  margin-top: 4px;
+}
+
+/* ── Voter Name ── */
+.voter-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  padding: 24px 20px 40px;
+  position: relative;
+  z-index: 1;
+}
+
+.voter-bar label {
+  font-size: 12px;
+  color: #666;
+  letter-spacing: 1px;
+}
+
+.voter-bar input {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: #ddd;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  width: 200px;
+  transition: border-color 0.2s;
+}
+
+.voter-bar input:focus {
+  outline: none;
+  border-color: var(--border-gold);
+}
+
+/* ── Navigation ── */
+.nav-bar {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  padding: 0 20px 50px;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 1;
+}
+
+.nav-btn {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: #777;
+  padding: 9px 22px;
+  border-radius: 24px;
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.nav-btn:hover, .nav-btn.active {
+  background: rgba(201,168,76,0.1);
+  border-color: var(--border-gold);
+  color: var(--gold);
+}
+
+/* ── Sections ── */
+.section {
+  padding: 0 clamp(20px, 4vw, 60px);
+  margin-bottom: 70px;
+  position: relative;
+  z-index: 1;
+}
+
+.section.hidden { display: none; }
+
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 28px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--border);
+}
+
+.section-num {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--gold);
+  background: rgba(201,168,76,0.08);
+  min-width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+}
+
+.section-title {
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #aaa;
+}
+
+.section-desc {
+  font-size: 12px;
+  color: #555;
+  margin-left: auto;
+}
+
+/* ── Grid ── */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 28px;
+}
+
+.grid.wide-cards {
+  grid-template-columns: repeat(auto-fill, minmax(480px, 1fr));
+}
+
+/* ── Cards ── */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+}
+
+.card:hover {
+  border-color: rgba(201,168,76,0.35);
+  transform: translateY(-3px);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.4), 0 0 30px rgba(201,168,76,0.04);
+}
+
+.card.voted {
+  border-color: rgba(201,168,76,0.5);
+  box-shadow: 0 0 0 1px rgba(201,168,76,0.2), 0 8px 30px rgba(0,0,0,0.3);
+}
+
+.card-canvas {
+  width: 100%;
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.card-canvas.wide { aspect-ratio: 2.5; }
+
+.card-canvas img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.card-info {
+  padding: 16px 20px;
+  border-top: 1px solid var(--border);
+}
+
+.card-info-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.card-name {
+  font-size: 15px;
+  font-weight: 500;
+  color: #ddd;
+}
+
+.card-palette {
+  font-size: 11px;
+  color: #555;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.palette-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+/* ── Voting ── */
+.vote-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.vote-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: #777;
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.25s;
+}
+
+.vote-btn:hover {
+  border-color: var(--border-gold);
+  color: var(--gold);
+  background: rgba(201,168,76,0.06);
+}
+
+.vote-btn.voted {
+  border-color: var(--gold);
+  color: var(--gold);
+  background: rgba(201,168,76,0.12);
+}
+
+.vote-btn svg { width: 14px; height: 14px; }
+
+.vote-count {
+  font-size: 18px;
+  font-weight: 300;
+  color: var(--gold);
+  min-width: 24px;
+  text-align: center;
+}
+
+.vote-avatars {
+  display: flex;
+  gap: 4px;
+  margin-left: auto;
+  flex-wrap: wrap;
+}
+
+.vote-avatar {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--navy);
+  border: 1px solid var(--border-gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 9px;
+  font-weight: 600;
+  color: var(--gold);
+}
+
+/* ── Comments ── */
+.comment-section {
+  margin-top: 12px;
+  border-top: 1px solid var(--border);
+  padding-top: 12px;
+}
+
+.comment-toggle {
+  font-size: 11px;
+  color: #555;
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-family: 'Inter', sans-serif;
+  padding: 0;
+  transition: color 0.2s;
+}
+
+.comment-toggle:hover { color: var(--gold); }
+
+.comments-list { display: none; margin-top: 10px; }
+.comments-list.open { display: block; }
+
+.comment {
+  display: flex;
+  gap: 10px;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.03);
+}
+
+.comment:last-child { border-bottom: none; }
+
+.comment-avatar {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: rgba(201,168,76,0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 9px;
+  font-weight: 600;
+  color: var(--gold);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.comment-body { flex: 1; }
+.comment-author { font-size: 11px; font-weight: 600; color: #999; }
+.comment-text { font-size: 12px; color: #777; margin-top: 2px; line-height: 1.5; }
+.comment-time { font-size: 10px; color: #444; margin-top: 2px; }
+
+.comment-input-row {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.comment-input {
+  flex: 1;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid var(--border);
+  color: #ccc;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  transition: border-color 0.2s;
+}
+
+.comment-input:focus {
+  outline: none;
+  border-color: var(--border-gold);
+}
+
+.comment-submit {
+  background: rgba(201,168,76,0.15);
+  border: 1px solid var(--border-gold);
+  color: var(--gold);
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.comment-submit:hover { background: rgba(201,168,76,0.25); }
+
+/* ── Replay ── */
+.replay-btn {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  background: rgba(0,0,0,0.6);
+  border: 1px solid rgba(255,255,255,0.1);
+  color: #888;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 15px;
+  transition: all 0.2s;
+  z-index: 10;
+}
+
+.replay-btn:hover {
+  background: rgba(201,168,76,0.2);
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+/* ── Expand ── */
+.expand-btn {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  background: rgba(0,0,0,0.6);
+  border: 1px solid rgba(255,255,255,0.1);
+  color: #888;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 13px;
+  transition: all 0.2s;
+  z-index: 10;
+}
+
+.expand-btn:hover {
+  background: rgba(201,168,76,0.2);
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+/* ── Theater ── */
+.theater {
+  display: none;
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.97);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.theater.active { display: flex; }
+
+.theater-content {
+  max-width: 70vmin;
+  max-height: 70vmin;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.theater-content img {
+  max-width: 70vmin;
+  max-height: 70vmin;
+  border-radius: 12px;
+}
+
+.theater-label {
+  margin-top: 28px;
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--gold);
+  letter-spacing: 2px;
+}
+
+.theater-sub {
+  margin-top: 8px;
+  font-size: 13px;
+  color: #555;
+}
+
+.theater-close {
+  position: absolute;
+  top: 28px;
+  right: 36px;
+  font-size: 12px;
+  color: #444;
+  letter-spacing: 1px;
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: 'Inter', sans-serif;
+  transition: color 0.2s;
+}
+
+.theater-close:hover { color: #888; }
+
+.theater-nav {
+  position: absolute;
+  bottom: 36px;
+  display: flex;
+  gap: 12px;
+}
+
+.theater-nav button {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  color: #999;
+  padding: 10px 28px;
+  border-radius: 8px;
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.theater-nav button:hover {
+  background: rgba(201,168,76,0.12);
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+/* ── Leaderboard ── */
+.results-section {
+  position: relative;
+  z-index: 1;
+  padding: 0 clamp(20px, 4vw, 60px) 80px;
+}
+
+.results-header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.results-header h3 {
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 8px;
+}
+
+.results-header p {
+  font-size: 13px;
+  color: #555;
+}
+
+.results-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 16px;
+}
+
+.result-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  transition: all 0.3s;
+}
+
+.result-card.leader {
+  border-color: var(--border-gold);
+  background: rgba(201,168,76,0.04);
+}
+
+.result-rank {
+  font-size: 24px;
+  font-weight: 200;
+  color: #444;
+  font-family: 'Playfair Display', serif;
+  min-width: 30px;
+}
+
+.result-card.leader .result-rank { color: var(--gold); }
+
+.result-info { flex: 1; }
+
+.result-name { font-size: 13px; font-weight: 500; color: #ccc; }
+
+.result-palette-label { font-size: 11px; color: #555; margin-top: 2px; }
+
+.result-votes { font-size: 20px; font-weight: 300; color: var(--gold); }
+
+.result-votes-label { font-size: 10px; color: #555; text-align: right; }
+
+/* ── Footer ── */
+.footer {
+  text-align: center;
+  padding: 40px 20px 60px;
+  border-top: 1px solid var(--border);
+  position: relative;
+  z-index: 1;
+}
+
+.footer p {
+  font-size: 11px;
+  color: #444;
+  letter-spacing: 1px;
+}
+
+/* ── Toast ── */
+.toast {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%) translateY(100px);
+  background: rgba(201,168,76,0.15);
+  border: 1px solid var(--border-gold);
+  color: var(--gold);
+  padding: 12px 28px;
+  border-radius: 12px;
+  font-size: 13px;
+  font-family: 'Inter', sans-serif;
+  z-index: 2000;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  backdrop-filter: blur(12px);
+}
+
+.toast.visible { transform: translateX(-50%) translateY(0); }
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .grid { grid-template-columns: 1fr; }
+  .grid.wide-cards { grid-template-columns: 1fr; }
+  .stats-bar { gap: 24px; }
+  .section-desc { display: none; }
+}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-badge">Internal Review</div>
+  <h1>Asteris<span>Q</span> — Logo Review</h1>
+  <p>Review the animated logo concepts below, vote for your favorites, and leave feedback. Click any logo to view fullscreen. Use arrow keys to navigate.</p>
+</div>
+
+<div class="stats-bar">
+  <div class="stat">
+    <div class="stat-num" id="stat-concepts">15</div>
+    <div class="stat-label">Concepts</div>
+  </div>
+  <div class="stat">
+    <div class="stat-num" id="stat-votes">0</div>
+    <div class="stat-label">Total Votes</div>
+  </div>
+  <div class="stat">
+    <div class="stat-num" id="stat-voters">0</div>
+    <div class="stat-label">Reviewers</div>
+  </div>
+</div>
+
+<div class="voter-bar">
+  <label>YOUR NAME</label>
+  <input type="text" id="voter-name" placeholder="e.g. Kate" autocomplete="off" />
+</div>
+
+<div class="nav-bar">
+  <button class="nav-btn active" data-filter="all">All Concepts</button>
+  <button class="nav-btn" data-filter="compass">Compass Reveal</button>
+  <button class="nav-btn" data-filter="framed">Framed Logos</button>
+  <button class="nav-btn" data-filter="wordmark">Wordmark</button>
+</div>
+
+<!-- Section 1: Compass Reveal -->
+<div class="section" data-section="compass" id="sec-compass">
+  <div class="section-header">
+    <div class="section-num">01</div>
+    <div class="section-title">Compass Reveal</div>
+    <div class="section-desc">N · E · S · W letters orbit in, asterisk anchors the center</div>
+  </div>
+  <div class="grid" id="grid-compass"></div>
+</div>
+
+<!-- Section 2: Framed Logos -->
+<div class="section" data-section="framed" id="sec-framed">
+  <div class="section-header">
+    <div class="section-num">02</div>
+    <div class="section-title">Framed Logos</div>
+    <div class="section-desc">Shape frames draw on, asterisk fades in</div>
+  </div>
+  <div class="grid" id="grid-framed"></div>
+</div>
+
+<!-- Section 3: Wordmark -->
+<div class="section" data-section="wordmark" id="sec-wordmark">
+  <div class="section-header">
+    <div class="section-num">03</div>
+    <div class="section-title">Wordmark — Hex Logo + Rotating *</div>
+    <div class="section-desc">Full brand mark with spinning asterisk</div>
+  </div>
+  <div class="grid wide-cards" id="grid-wordmark"></div>
+</div>
+
+<!-- Leaderboard -->
+<div class="results-section" id="results-section">
+  <div class="results-header">
+    <h3>Leaderboard</h3>
+    <p>Top voted concepts — updates live as the team votes</p>
+  </div>
+  <div class="results-grid" id="results-grid"></div>
+</div>
+
+<div class="footer">
+  <p>AsterisQ Brand Identity Review · Confidential · Internal Team Only</p>
+</div>
+
+<!-- Theater -->
+<div class="theater" id="theater">
+  <button class="theater-close" onclick="closeTheater()">✕ CLOSE</button>
+  <div class="theater-content" id="theater-content"></div>
+  <div class="theater-label" id="theater-label"></div>
+  <div class="theater-sub" id="theater-sub"></div>
+  <div class="theater-nav">
+    <button onclick="event.stopPropagation();prevSlide()">← Previous</button>
+    <button onclick="event.stopPropagation();nextSlide()">Next →</button>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+// ─── Logo Data ───
+const logoData = {
+  compass: [
+    { id: 'compass-black-emerald', name: 'Compass Letters', palette: 'Black Emerald', bg: '#0a0a0f', dots: ['#0a0a0f','#2ecc71'], gif: 'compass-reveal-black-emerald.gif' },
+    { id: 'compass-navy-gold', name: 'Compass Letters', palette: 'Navy Gold', bg: '#0f1638', dots: ['#0f1638','#c9a84c'], gif: 'compass-reveal-navy-gold.gif' },
+    { id: 'compass-white-navy', name: 'Compass Letters', palette: 'White Navy', bg: '#f5f5f0', dots: ['#f5f5f0','#0f1638'], gif: 'compass-reveal-white-navy.gif' },
+  ],
+  framed: [
+    { id: 'framed-circle-black-emerald', name: 'Circle Frame', palette: 'Black Emerald', bg: '#0a0a0f', dots: ['#0a0a0f','#2ecc71'], gif: 'framed-circle-black-emerald.gif' },
+    { id: 'framed-circle-navy-gold', name: 'Circle Frame', palette: 'Navy Gold', bg: '#0f1638', dots: ['#0f1638','#c9a84c'], gif: 'framed-circle-navy-gold.gif' },
+    { id: 'framed-circle-white-navy', name: 'Circle Frame', palette: 'White Navy', bg: '#f5f5f0', dots: ['#f5f5f0','#0f1638'], gif: 'framed-circle-white-navy.gif' },
+    { id: 'framed-hex-black-emerald', name: 'Hexagon Frame', palette: 'Black Emerald', bg: '#0a0a0f', dots: ['#0a0a0f','#2ecc71'], gif: 'framed-hexagon-black-emerald.gif' },
+    { id: 'framed-hex-navy-gold', name: 'Hexagon Frame', palette: 'Navy Gold', bg: '#0f1638', dots: ['#0f1638','#c9a84c'], gif: 'framed-hexagon-navy-gold.gif' },
+    { id: 'framed-hex-white-navy', name: 'Hexagon Frame', palette: 'White Navy', bg: '#f5f5f0', dots: ['#f5f5f0','#0f1638'], gif: 'framed-hexagon-white-navy.gif' },
+    { id: 'framed-sq-black-emerald', name: 'Square Frame', palette: 'Black Emerald', bg: '#0a0a0f', dots: ['#0a0a0f','#2ecc71'], gif: 'framed-square-black-emerald.gif' },
+    { id: 'framed-sq-navy-gold', name: 'Square Frame', palette: 'Navy Gold', bg: '#0f1638', dots: ['#0f1638','#c9a84c'], gif: 'framed-square-navy-gold.gif' },
+    { id: 'framed-sq-white-navy', name: 'Square Frame', palette: 'White Navy', bg: '#f5f5f0', dots: ['#f5f5f0','#0f1638'], gif: 'framed-square-white-navy.gif' },
+  ],
+  wordmark: [
+    { id: 'wordmark-black-emerald', name: 'asterisQ', palette: 'Black Emerald', bg: '#0a0a0f', dots: ['#0a0a0f','#2ecc71'], gif: 'wordmark-hex-black-emerald.gif', wide: true },
+    { id: 'wordmark-navy-gold', name: 'asterisQ', palette: 'Navy Gold', bg: '#0f1638', dots: ['#0f1638','#c9a84c'], gif: 'wordmark-hex-navy-gold.gif', wide: true },
+    { id: 'wordmark-white-navy', name: 'asterisQ', palette: 'White Navy', bg: '#f5f5f0', dots: ['#f5f5f0','#0f1638'], gif: 'wordmark-hex-white-navy.gif', wide: true },
+  ]
+};
+
+// ─── State ───
+const state = { votes: {}, comments: {} };
+try {
+  const saved = localStorage.getItem('asterisq-review-v2');
+  if (saved) Object.assign(state, JSON.parse(saved));
+} catch(e) {}
+
+function save() {
+  try { localStorage.setItem('asterisq-review-v2', JSON.stringify(state)); } catch(e) {}
+}
+
+function getVoterName() {
+  return document.getElementById('voter-name').value.trim() || 'Anonymous';
+}
+
+try {
+  const savedName = localStorage.getItem('asterisq-voter');
+  if (savedName) document.getElementById('voter-name').value = savedName;
+} catch(e) {}
+
+document.getElementById('voter-name').addEventListener('input', (e) => {
+  try { localStorage.setItem('asterisq-voter', e.target.value); } catch(e2) {}
+  allCards.forEach(c => renderVotes(c.id));
+});
+
+// ─── Build Cards ───
+const allCards = [];
+
+function createCard(data, section) {
+  const idx = allCards.length;
+  allCards.push({ ...data, section });
+
+  if (!state.votes[data.id]) state.votes[data.id] = [];
+  if (!state.comments[data.id]) state.comments[data.id] = [];
+
+  const card = document.createElement('div');
+  card.className = 'card' + (state.votes[data.id].length > 0 ? ' voted' : '');
+  card.id = 'card-' + data.id;
+
+  // Canvas with GIF
+  const canvas = document.createElement('div');
+  canvas.className = 'card-canvas' + (data.wide ? ' wide' : '');
+  canvas.style.background = data.bg;
+
+  const img = document.createElement('img');
+  img.src = data.gif;
+  img.alt = data.name + ' — ' + data.palette;
+  img.loading = 'lazy';
+  canvas.appendChild(img);
+  canvas.onclick = () => openTheater(idx);
+
+  // Replay button (reloads GIF)
+  const replay = document.createElement('button');
+  replay.className = 'replay-btn';
+  replay.innerHTML = '↻';
+  replay.title = 'Replay animation';
+  replay.onclick = (e) => {
+    e.stopPropagation();
+    const src = img.src;
+    img.src = '';
+    setTimeout(() => { img.src = src + '?t=' + Date.now(); }, 50);
+  };
+  canvas.appendChild(replay);
+
+  // Expand button
+  const expand = document.createElement('button');
+  expand.className = 'expand-btn';
+  expand.innerHTML = '⛶';
+  expand.title = 'Fullscreen';
+  expand.onclick = (e) => { e.stopPropagation(); openTheater(idx); };
+  canvas.appendChild(expand);
+
+  // Info
+  const info = document.createElement('div');
+  info.className = 'card-info';
+
+  const infoTop = document.createElement('div');
+  infoTop.className = 'card-info-top';
+  infoTop.innerHTML = `
+    <div class="card-name">${data.name}</div>
+    <div class="card-palette">
+      <span class="palette-dot" style="background:${data.dots[0]};border:1px solid rgba(255,255,255,0.15)"></span>
+      <span class="palette-dot" style="background:${data.dots[1]}"></span>
+      ${data.palette}
+    </div>`;
+
+  // Vote row
+  const voteRow = document.createElement('div');
+  voteRow.className = 'vote-row';
+  voteRow.id = 'vote-row-' + data.id;
+
+  const voteBtn = document.createElement('button');
+  voteBtn.className = 'vote-btn';
+  voteBtn.innerHTML = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3H14zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"/></svg> Vote`;
+  voteBtn.onclick = (e) => { e.stopPropagation(); toggleVote(data.id); };
+
+  const voteCount = document.createElement('div');
+  voteCount.className = 'vote-count';
+  voteCount.id = 'count-' + data.id;
+
+  const voteAvatars = document.createElement('div');
+  voteAvatars.className = 'vote-avatars';
+  voteAvatars.id = 'avatars-' + data.id;
+
+  voteRow.appendChild(voteBtn);
+  voteRow.appendChild(voteCount);
+  voteRow.appendChild(voteAvatars);
+
+  // Comments
+  const commentSection = document.createElement('div');
+  commentSection.className = 'comment-section';
+
+  const commentToggle = document.createElement('button');
+  commentToggle.className = 'comment-toggle';
+  commentToggle.id = 'ctoggle-' + data.id;
+  commentToggle.onclick = () => {
+    const list = document.getElementById('clist-' + data.id);
+    list.classList.toggle('open');
+    updateToggleText(data.id);
+  };
+
+  const commentsList = document.createElement('div');
+  commentsList.className = 'comments-list';
+  commentsList.id = 'clist-' + data.id;
+
+  const inputRow = document.createElement('div');
+  inputRow.className = 'comment-input-row';
+  const input = document.createElement('input');
+  input.className = 'comment-input';
+  input.placeholder = 'Add feedback...';
+  input.onkeydown = (e) => { if (e.key === 'Enter') addComment(data.id, input); };
+  const submit = document.createElement('button');
+  submit.className = 'comment-submit';
+  submit.textContent = 'Post';
+  submit.onclick = () => addComment(data.id, input);
+  inputRow.appendChild(input);
+  inputRow.appendChild(submit);
+
+  commentSection.appendChild(commentToggle);
+  commentSection.appendChild(commentsList);
+  commentSection.appendChild(inputRow);
+
+  info.appendChild(infoTop);
+  info.appendChild(voteRow);
+  info.appendChild(commentSection);
+  card.appendChild(canvas);
+  card.appendChild(info);
+
+  renderVotes(data.id);
+  renderComments(data.id);
+
+  return card;
+}
+
+function toggleVote(id) {
+  const name = getVoterName();
+  if (!name || name === 'Anonymous') {
+    showToast('Please enter your name above to vote');
+    document.getElementById('voter-name').focus();
+    return;
+  }
+  const votes = state.votes[id];
+  const idx = votes.indexOf(name);
+  if (idx === -1) {
+    votes.push(name);
+    showToast('Vote recorded — ' + allCards.find(c => c.id === id)?.name);
+  } else {
+    votes.splice(idx, 1);
+    showToast('Vote removed');
+  }
+  save();
+  renderVotes(id);
+  updateStats();
+  renderLeaderboard();
+  const card = document.getElementById('card-' + id);
+  card.classList.toggle('voted', votes.length > 0);
+}
+
+function renderVotes(id) {
+  const votes = state.votes[id] || [];
+  const name = getVoterName();
+  const countEl = document.getElementById('count-' + id);
+  if (countEl) countEl.textContent = votes.length || '';
+  const row = document.getElementById('vote-row-' + id);
+  if (row) {
+    const btn = row.querySelector('.vote-btn');
+    btn.classList.toggle('voted', votes.includes(name));
+  }
+  const avatarsEl = document.getElementById('avatars-' + id);
+  if (avatarsEl) {
+    avatarsEl.innerHTML = votes.map(v =>
+      `<div class="vote-avatar" title="${v}">${v.substring(0,2).toUpperCase()}</div>`
+    ).join('');
+  }
+}
+
+function addComment(id, input) {
+  const text = input.value.trim();
+  if (!text) return;
+  const name = getVoterName();
+  if (name === 'Anonymous') {
+    showToast('Please enter your name to comment');
+    document.getElementById('voter-name').focus();
+    return;
+  }
+  state.comments[id].push({ author: name, text, time: new Date().toLocaleString() });
+  input.value = '';
+  save();
+  renderComments(id);
+  document.getElementById('clist-' + id).classList.add('open');
+  updateToggleText(id);
+  showToast('Comment added');
+}
+
+function renderComments(id) {
+  const comments = state.comments[id] || [];
+  const list = document.getElementById('clist-' + id);
+  if (list) {
+    list.innerHTML = comments.map(c => `
+      <div class="comment">
+        <div class="comment-avatar">${c.author.substring(0,2).toUpperCase()}</div>
+        <div class="comment-body">
+          <div class="comment-author">${c.author}</div>
+          <div class="comment-text">${c.text}</div>
+          <div class="comment-time">${c.time}</div>
+        </div>
+      </div>`).join('');
+  }
+  updateToggleText(id);
+}
+
+function updateToggleText(id) {
+  const comments = state.comments[id] || [];
+  const toggle = document.getElementById('ctoggle-' + id);
+  const list = document.getElementById('clist-' + id);
+  if (toggle) {
+    const open = list && list.classList.contains('open');
+    toggle.textContent = open ? '▾ Hide comments' : `▸ ${comments.length} comment${comments.length !== 1 ? 's' : ''}`;
+  }
+}
+
+function updateStats() {
+  let totalVotes = 0;
+  const voterSet = new Set();
+  Object.values(state.votes).forEach(arr => {
+    totalVotes += arr.length;
+    arr.forEach(v => voterSet.add(v));
+  });
+  document.getElementById('stat-votes').textContent = totalVotes;
+  document.getElementById('stat-voters').textContent = voterSet.size;
+}
+
+// ─── Populate Grids ───
+const grids = { compass: 'grid-compass', framed: 'grid-framed', wordmark: 'grid-wordmark' };
+Object.keys(grids).forEach(section => {
+  const grid = document.getElementById(grids[section]);
+  logoData[section].forEach(d => grid.appendChild(createCard(d, section)));
+});
+
+// ─── Filters ───
+document.querySelectorAll('.nav-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const f = btn.dataset.filter;
+    document.querySelectorAll('.section').forEach(sec => {
+      sec.classList.toggle('hidden', f !== 'all' && sec.dataset.section !== f);
+    });
+  });
+});
+
+// ─── Theater ───
+let current = 0;
+
+function openTheater(idx) {
+  current = idx;
+  showSlide();
+  document.getElementById('theater').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeTheater() {
+  document.getElementById('theater').classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+function showSlide() {
+  const card = allCards[current];
+  const content = document.getElementById('theater-content');
+  content.style.background = card.bg;
+  content.innerHTML = `<img src="${card.gif}?t=${Date.now()}" alt="${card.name}">`;
+  document.getElementById('theater-label').textContent = card.name;
+  document.getElementById('theater-sub').textContent = card.palette + '  ·  ' + (current+1) + ' / ' + allCards.length;
+}
+
+function nextSlide() { current = (current+1) % allCards.length; showSlide(); }
+function prevSlide() { current = (current-1+allCards.length) % allCards.length; showSlide(); }
+
+document.getElementById('theater').addEventListener('click', (e) => {
+  if (e.target.tagName !== 'BUTTON') closeTheater();
+});
+
+document.addEventListener('keydown', (e) => {
+  if (!document.getElementById('theater').classList.contains('active')) return;
+  if (e.key === 'Escape') closeTheater();
+  if (e.key === 'ArrowRight') nextSlide();
+  if (e.key === 'ArrowLeft') prevSlide();
+});
+
+// ─── Leaderboard ───
+function renderLeaderboard() {
+  const sorted = allCards
+    .map(c => ({ ...c, voteCount: (state.votes[c.id] || []).length }))
+    .sort((a, b) => b.voteCount - a.voteCount)
+    .slice(0, 8);
+  document.getElementById('results-grid').innerHTML = sorted.map((c, i) => `
+    <div class="result-card ${i === 0 && c.voteCount > 0 ? 'leader' : ''}">
+      <div class="result-rank">${i + 1}</div>
+      <div class="result-info">
+        <div class="result-name">${c.name}</div>
+        <div class="result-palette-label">${c.palette}</div>
+      </div>
+      <div style="text-align:right">
+        <div class="result-votes">${c.voteCount}</div>
+        <div class="result-votes-label">vote${c.voteCount !== 1 ? 's' : ''}</div>
+      </div>
+    </div>`).join('');
+}
+
+// ─── Toast ───
+function showToast(msg) {
+  const toast = document.getElementById('toast');
+  toast.textContent = msg;
+  toast.classList.add('visible');
+  setTimeout(() => toast.classList.remove('visible'), 2500);
+}
+
+// ─── Init ───
+updateStats();
+renderLeaderboard();
+</script>
+</body>
+</html>
